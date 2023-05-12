@@ -1,5 +1,5 @@
 {% set name = "tmmc-lnpy" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tmmc-lnpy-{{ version }}.tar.gz
-  sha256: 8fb86a8f9cf5a67043e258ca2f4e14043fbffc1b00bd5dbb6ebfa1f6a7288992
+  sha256: e5b537c4cb9ecad9efd7edadff28884f5b0f6570d7883a21617d2c22b353ab34
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
