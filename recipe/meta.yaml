@@ -1,5 +1,5 @@
 {% set name = "tmmc-lnpy" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tmmc-lnpy-{{ version }}.tar.gz
-  sha256: 3e608f7e6923d5e9e71af795e213f3474052144a8f8fa2504403951aa64192b5
+  sha256: 63915df48c0031333cdba91f34dc88bcf9cb74c55e8ce79a17c570fa172fcce0
 
 build:
   noarch: python
@@ -30,7 +30,7 @@ requirements:
     - bottleneck
     - tqdm
     - importlib-resources
-    - module-utilities >=0.1
+    - module-utilities >=0.9.0
     - lazy_loader
 
 test:
