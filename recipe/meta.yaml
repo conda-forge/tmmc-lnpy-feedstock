@@ -1,37 +1,39 @@
 {% set name = "tmmc-lnpy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tmmc-lnpy-{{ version }}.tar.gz
-  sha256: 63915df48c0031333cdba91f34dc88bcf9cb74c55e8ce79a17c570fa172fcce0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tmmc_lnpy-{{ version }}.tar.gz
+  sha256: aca7eaffcd9c77f36db5b440dec2159f8b80cfd38ef4dd01f0117a42351fa68a
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=61.2
-    - setuptools-scm >=7.0
+    - python >=3.8,<=3.12
+    - hatch-fancy-pypi-readme
+    - hatch-vcs
+    - hatchling
     - pip
   run:
-    - python >=3.8
-    - numpy
-    - xarray
-    - scipy
-    - scikit-image
-    - joblib
+    - python >=3.8,<=3.12
     - bottleneck
-    - tqdm
     - importlib-resources
-    - module-utilities >=0.9.0
+    - joblib
     - lazy_loader
+    - module-utilities >=0.9.0
+    - numpy
+    - scikit-image >=0.21
+    - scipy
+    - tqdm
+    - typing-extensions
+    - xarray
 
 test:
   imports:
