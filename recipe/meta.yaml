@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tmmc_lnpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tmmc_lnpy-{{ version }}.tar.gz
   sha256: fd8a8a28ec1d2617828d81f6db390944f66860b2a4747da003d063ccdcdaf4d2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<=3.12
+    - python {{ python_min }}
     - hatch-fancy-pypi-readme
     - hatch-vcs
     - hatchling
     - pip
   run:
-    - python >=3.8,<=3.12
+    - python >={{ python_min }},<3.13a0
     - bottleneck
     - importlib-resources
     - joblib
@@ -43,6 +43,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/usnistgov/tmmc-lnpy
