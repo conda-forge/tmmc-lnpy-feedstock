@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build>=0.11.0,<0.12.0
+    - uv-build >=0.11.0,<0.12.0
     - pip
   run:
     - python >={{ python_min }}
@@ -29,7 +29,7 @@ requirements:
     - module-utilities >=0.9.0
     - numba
     - numpy
-    - pandas>=2.3.0
+    - pandas >=2.3.0
     - pooch
     - scikit-image >=0.21
     - scipy
