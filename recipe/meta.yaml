@@ -1,5 +1,5 @@
 {% set name = "tmmc-lnpy" %}
-{% set version = "0.9.3" %}
+{% set version = "0.10.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tmmc_lnpy-{{ version }}.tar.gz
-  sha256: 8125570ad60ef5f7fdce2e00d1511e77387b1a2cbb64ab2c375d157db54df052
+  sha256: f03459bb21fdf5fb65e07f98284d1cdbef6d95317fcc830f2552027557361db5
 
 build:
   noarch: python
@@ -18,11 +18,13 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build >=0.11.0,<0.12.0
+    - uv-build >=0.11.26,<0.12.0
     - pip
   run:
     - python >={{ python_min }}
+    - attrs >=26.1.0
     - bottleneck
+    - cattrs >=26.1.0
     - importlib-resources
     - joblib
     - lazy_loader
