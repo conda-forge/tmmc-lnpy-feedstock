@@ -22,9 +22,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - attrs >= 26.1.0
+    - attrs >=26.1.0
     - bottleneck
-    - cattrs >= 26.1.0
+    - cattrs >=26.1.0
     - importlib-resources
     - joblib
     - lazy_loader
